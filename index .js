@@ -2,9 +2,9 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 const port = 9099;
-const tabela = require("../models/tables")
+const tabela = require("./models//tables")
 //Require da conexão com o banco de dados
-const db = require("../models/db");
+const db = require("./models/db");
 //Executar JSON
     app.use(express.json())
     app.use(cors())
