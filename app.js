@@ -1,7 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const app = express();
-const port = 9099;
+const port = 9090;
 const tabela = require("./models/tables")
 //Require da conexão com o banco de dados
 const db = require("./models/db");
@@ -35,4 +35,6 @@ app.get("/cabecalho", (req, res) => {
 })
 
 
-app.listen(port)
+app.listen(port, () => {
+    console.log("Porta: " + port);
+})
