@@ -2,13 +2,20 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 const port = 9099;
-const tabela = require("./models//tables")
+const tabela = require("./models/tables")
 //Require da conexão com o banco de dados
 const db = require("./models/db");
 //Executar JSON
     app.use(express.json())
     app.use(cors())
 //ROTAS
+
+app.get("/", (req, res) => {
+    tabela.usuarios.findAll().then((element) => {
+        res.json(element)
+    })
+})
+
 app.get("/produtos", (req, res) => {
     tabela.usuarios.findAll().then((element) => {
         res.json(element)
